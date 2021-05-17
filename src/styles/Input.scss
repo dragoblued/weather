@@ -10,4 +10,21 @@
     &:hover {
         border: 2px solid #8083A4;
     }
+    &_error {
+        border: 2px solid #E5596D;
+        &:hover {
+            border: 2px solid #E5596D;
+        }
+    }
+}
+
+.label {
+    display: none;
+    font-size: 14px;
+    line-height: 18px;
+    color: #E5596D;
+    margin-top: 8px;
+    &_display {
+        display: block;
+    }
 }
