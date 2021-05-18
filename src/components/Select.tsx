@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import '../styles/Select.scss';
 import Input from './Input';
-import getWeatherIn7Days from '../functions/ApiCommon';
 import { City } from '../functions/interfaces';
 
 interface ISelectProps {
@@ -19,9 +18,7 @@ export default function Select(props: ISelectProps) {
                 onclick();
                 setValue(city.text);
                 setError(false);
-                getWeatherIn7Days(city).then(
-                    res => props.changeWeatherData(res)
-                )
+                props.changeWeatherData(city);
             }}>{city.text}</li>
         }
     );
@@ -40,15 +37,21 @@ export default function Select(props: ISelectProps) {
             setError(true);
         } else {
             setError(false);
-            getWeatherIn7Days(city[0]).then(
-                res => props.changeWeatherData(res)
-            )
+            props.changeWeatherData(city);
         }
     }
 
     return (
         <div className="select">
-            <Input click={onclick} showList={showList} value={value} change={changeInputValue} error={error}/>
+            <Input click={onclick} 
+                showList={showList} 
+                value={value} 
+                change={changeInputValue} 
+                error={error} 
+                textError="Cities were not found" 
+                type="select"
+                placeholder="Select city"
+            />
             {
                 (showList == true) && 
                 <ul className="list">

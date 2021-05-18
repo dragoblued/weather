@@ -1,3 +1,40 @@
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu'), url(./assets/fonts/Ubuntu-Bold.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu'), url(./assets/fonts/Ubuntu-Light.ttf) format('opentype');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    font-weight: 900;
+    src: local('Ubuntu'), url(./assets/fonts/Ubuntu-Medium.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-weight: 900;
+    src: local('Ubuntu'), url(./assets/fonts/Ubuntu-Regular.ttf) format('opentype');
+}
+
+body, input, li, ul{
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: normal;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+.main {
+  display: flex;
+}
+
 .App {
   text-align: center;
 }
