@@ -34,13 +34,15 @@ export default function Block7Day(props: any) {
   }
 
   useEffect(() => { //при изменении даты или города - отправляется запрос
-    getWeatherOneDay(city, date).then((res) => {
-      setWeatherData(res);
-      setRequestError(false);
-      if (res.cod == "400") {
-        setRequestError(true); //Api может отдать данные, только по предыдущим 5-ти дням - если не соответвует дата, то отображаем текст с ошибкой
-      }
-    });
+    if (city.text !== '') {
+      getWeatherOneDay(city, date).then((res) => {
+        setWeatherData(res);
+        setRequestError(false);
+        if (res.cod == "400") {
+          setRequestError(true); //Api может отдать данные, только по предыдущим 5-ти дням - если не соответвует дата, то отображаем текст с ошибкой
+        }
+      });
+    }
   }, [city, date]);
   
   return (
