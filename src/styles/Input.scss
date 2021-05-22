@@ -1,4 +1,5 @@
 .input {
+    position: relative;
     width: 252px;
     height: 48px;
     background: rgba(128, 131, 164, 0.06);
@@ -9,11 +10,31 @@
     outline:none;
     &:hover {
         border: 2px solid #8083A4;
+        cursor: pointer;
     }
     &_error {
         border: 2px solid #E5596D;
         &:hover {
             border: 2px solid #E5596D;
+        }
+    }
+    &-icon {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &__select {
+            transition: all 0.5s ease-in 0s;
+            background-image: url(../assets/icons/arrow.svg);
+            &_rotate {
+                transform: rotate(180deg);
+            }
+        }
+        &__calendar {
+            background-image: url(../assets/icons/calendar.svg);
         }
     }
 }

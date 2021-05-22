@@ -37,7 +37,7 @@ export default function Select(props: ISelectProps) {
             setError(true);
         } else {
             setError(false);
-            props.changeWeatherData(city);
+            props.changeWeatherData(city[0]);
         }
     }
 

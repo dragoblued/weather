@@ -33,6 +33,11 @@ button {
 
 .main {
   display: flex;
+  @media screen and (max-width: 1020px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .App {

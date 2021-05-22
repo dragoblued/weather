@@ -39,6 +39,9 @@
         &_current {
             color: #373AF5;
         }
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 .arrow {
@@ -47,6 +50,7 @@
     background-image: url('../assets/icons/chevron-bottom.svg');
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
     &_left {
         transform: rotate(90deg); 
     }

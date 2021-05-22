@@ -1,5 +1,10 @@
 .list-weather {
     display: flex;
+    align-items: center;
+    @media screen and (max-width: 720px) {
+        position: relative;
+        left: calc(100%/4);
+    }
     .card  {
         margin: 0px 5px;
     }
@@ -11,9 +16,9 @@
     width: 660px;
     height: 524px;
     margin: 20px;
-    padding: 50px 70px;
+    padding: 50px 30px;
     overflow: hidden;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 720px) {
         width: calc(100% - 20px);
         height: fit-content;
         align-items: center;
@@ -28,9 +33,28 @@
     }
     &__select {
         margin: 32px 0px 54px;
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 720px) {
             margin: 32px 0px 32px;
             
+        }
+    }
+    &__button {
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url(../assets/icons/chevron-bottom.svg);
+        @media screen and (max-width: 720px) {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &_left {
+            transform: rotate(90deg);
+        }
+        &_right {
+            transform: rotate(-90deg);
         }
     }
     background: #FFFFFF;

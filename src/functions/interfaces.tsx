@@ -4,3 +4,8 @@ export interface City {
     value: string,
     coordinates: any
 }
+
+export interface Coordinate {
+    x: number,
+    y: number
+ }

@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Block7Day from './components/Block7Day';
 import BlockOneDay from './components/BlockOneDay';
 
@@ -16,7 +16,7 @@ function App() {
       id: 2,
       text: 'Тольятти',
       value: 'Tolyatti',
-      coordinates: [53.195873, 50.100193]
+      coordinates: [53.507836, 49.420393]
     },
     {
       id: 3,
