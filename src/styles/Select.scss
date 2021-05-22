@@ -1,40 +1,47 @@
+@import "../assets/variables.scss";
+
 .select {
-    position: relative;
+  position: relative;
 }
+
 .list {
-    position: absolute;
-    z-index: 5;
-    width: 252px;
-    max-height: 160px;
-    margin-top: 5px;
-    overflow: scroll;
-    padding: 12px 16px;
-    list-style-type: none;
-    background: #FFFFFF;
-    border: 2px solid rgba(128, 131, 164, 0.06);
-    box-sizing: border-box;
-    box-shadow: 0px 2px 4px rgba(4, 5, 73, 0.16), 14px 14px 20px rgba(5, 6, 114, 0.08);
-    border-radius: 8px;
-    &__item {
-        height: 36px;
-        padding: 6px 10px;
-        background-color: white;
-        &:hover {
-            cursor: pointer;
-        }
-        &_current {
-            background: rgba(128, 131, 164, 0.06);
-            border-radius: 8px;
-        }
+  position: absolute;
+  z-index: 5;
+  width: 252px;
+  max-height: 160px;
+  margin-top: 5px;
+  overflow: scroll;
+  padding: 12px 16px;
+  list-style-type: none;
+  background: $base;
+  border: 2px solid rgba(128, 131, 164, 0.06);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(4, 5, 73, 0.16), 14px 14px 20px rgba(5, 6, 114, 0.08);
+  border-radius: 8px;
+
+  &__item {
+    height: 36px;
+    padding: 6px 10px;
+    background-color: $base;
+
+    &:hover {
+      cursor: pointer;
     }
-    &::-webkit-scrollbar {
-        width: 4px;
-        height: 28px;
-      }
-      
-    &::-webkit-scrollbar-thumb {
-        border-radius: 38px;
-        opacity: 0.4;
-        background: #8083A4;
+
+    &_current {
+      background: rgba(128, 131, 164, 0.06);
+      border-radius: 8px;
     }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 28px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 38px;
+    opacity: 0.4;
+    background: $secondary;
+  }
 }

@@ -1,51 +1,61 @@
+@import "../assets/variables.scss";
+
 .input {
-    position: relative;
-    width: 252px;
-    height: 48px;
-    background: rgba(128, 131, 164, 0.06);
-    border: 2px solid rgba(128, 131, 164, 0.2);
-    box-sizing: border-box;
-    border-radius: 8px;
-    padding: 12px 16px;
-    outline:none;
+  position: relative;
+  width: 252px;
+  height: 48px;
+  background: rgba(128, 131, 164, 0.06);
+  border: 2px solid rgba(128, 131, 164, 0.2);
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 12px 16px;
+  outline: none;
+
+  &:hover {
+    border: 2px solid $secondary;
+    cursor: pointer;
+  }
+
+  &_error {
+    border: 2px solid $critic;
+
     &:hover {
-        border: 2px solid #8083A4;
-        cursor: pointer;
+      border: 2px solid $critic;
     }
-    &_error {
-        border: 2px solid #E5596D;
-        &:hover {
-            border: 2px solid #E5596D;
-        }
+  }
+
+  &-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &__select {
+      transition: all 0.5s ease-in 0s;
+      background-image: url(../assets/icons/arrow.svg);
+
+      &_rotate {
+        transform: rotate(180deg);
+      }
     }
-    &-icon {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        width: 16px;
-        height: 16px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        &__select {
-            transition: all 0.5s ease-in 0s;
-            background-image: url(../assets/icons/arrow.svg);
-            &_rotate {
-                transform: rotate(180deg);
-            }
-        }
-        &__calendar {
-            background-image: url(../assets/icons/calendar.svg);
-        }
+
+    &__calendar {
+      background-image: url(../assets/icons/calendar.svg);
     }
+  }
 }
 
 .label {
-    display: none;
-    font-size: 14px;
-    line-height: 18px;
-    color: #E5596D;
-    margin-top: 8px;
-    &_display {
-        display: block;
-    }
+  display: none;
+  font-size: 14px;
+  line-height: 18px;
+  color: $critic;
+  margin-top: 8px;
+
+  &_display {
+    display: block;
+  }
 }

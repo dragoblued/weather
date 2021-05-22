@@ -1,4 +1,6 @@
 
+@import "./assets/variables.scss";
+
 @font-face {
   font-family: 'Ubuntu';
   src: local('Ubuntu'), url(./assets/fonts/Ubuntu-Bold.ttf) format('opentype');
@@ -8,6 +10,7 @@
   font-family: 'Ubuntu';
   src: local('Ubuntu'), url(./assets/fonts/Ubuntu-Light.ttf) format('opentype');
 }
+
 @font-face {
     font-family: 'Ubuntu';
     font-weight: 900;
@@ -25,7 +28,7 @@ body, input, li, ul, #root {
   font-family: 'Ubuntu';
   font-style: normal;
   font-weight: normal;
-  background-color: #373AF5;
+  background-color: $accent;
 }
 
 button {
@@ -34,12 +37,12 @@ button {
 }
 
 .main {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: $mobile) {
     padding: 30px;
   }
 }
@@ -47,75 +50,40 @@ button {
 .title {
   margin-bottom: 60px;
   z-index: 2;
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: $mobile) {
     margin-bottom: 24px;
   }
   h1 {
     font-weight: bold;
     font-size: 102px;
     line-height: 122px;
-    color: #FFFFFF;
-    @media screen and (max-width: 720px) {
+    color: $base;
+
+    @media screen and (max-width: $mobile) {
       font-size: 32px;
       line-height: 32px;
     }
+
     &:nth-child(2) {
       margin-left: 398px;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: $tablet) {
         margin-left: 310px;
       }
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: $mobile) {
         margin-left: 100px;
       }
     }
   }
 }
+
 .blocks {
   display: flex;
   z-index: 2;
-  @media screen and (max-width: 1024px) {
+
+  @media screen and (max-width: $tablet) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -124,10 +92,12 @@ button {
   max-width: 600px;
   height: 800px;
   z-index: 1;
+
   &_left {
     bottom: 0px;
     left: 0px;
   }
+  
   &_right {
     right: 0px;
     top: 0px;
